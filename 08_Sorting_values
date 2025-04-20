@@ -1,0 +1,20 @@
+#sorting multiple column values and index
+df = pd.DataFrame({
+    'Name': ['Anmol', 'Palak', 'Maxy', 'Zoya', 'Krit'],
+    'Age': [20, 21, 22, 23, 21],
+    'Score': [88, 92, 75, 85, 92]
+})
+
+print(df.sort_values(by=['Name','Age'],ascending=[True,False]))#sorting according to values
+df = pd.DataFrame({
+    'Name': ['Anmol', 'Palak', 'Maxy', 'Zoya', 'Krit'],
+    'Age': [20, 21, 22, 23, 21],
+    'Score': [88, 92, 75, 85, 92]
+})
+
+print(df.sort_index(ascending=[True,False]))#sorting according to index
+
+#using conditionals by query function and normally
+print(df.query('Score>80 and Age>18'))#using query function
+print(df[(df['Age']>18) & (df['Name']=='Anmol')])#conditonals normally used 
+
